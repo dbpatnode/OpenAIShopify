@@ -6,17 +6,23 @@ const Responses = ({ responses }) => {
         const { response, prompt } = resp;
 
         return (
-          <div key={index}>
-            <span>
+          <div className='Response' key={index}>
+            <div>
               <p>
-                <b>prompt:</b> {prompt}
+                <span className='prompt'>
+                  <b>prompt:</b>
+                </span>
+                <span>{prompt}</span>
               </p>
-            </span>
-            <span>
+            </div>
+            <div>
               <p>
-                <b>response:</b> {response}
+                <span>
+                  <b>response:</b>
+                </span>
+                <span>{response}</span>
               </p>
-            </span>
+            </div>
           </div>
         );
       })}

@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import './App.scss';
 import Form from './Form/Form';
 import Responses from './Responses/Responses';
 const { Configuration, OpenAIApi } = require('openai');

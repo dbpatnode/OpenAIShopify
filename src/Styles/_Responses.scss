@@ -1,0 +1,17 @@
+.Response {
+  background-color: lightgray;
+  padding: 4px 8px;
+  margin: 12px 0px;
+  border-radius: 4px;
+
+  p {
+    display: flex;
+
+    span {
+      margin: 4px;
+    }
+    .prompt {
+      margin-right: 16px !important;
+    }
+  }
+}
