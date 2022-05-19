@@ -23,12 +23,12 @@ function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    // fetching API data
     const configuration = new Configuration({
       apiKey: process.env.REACT_APP_OPENAI_API_KEY,
     });
     const openai = new OpenAIApi(configuration);
 
-    // fetching API data
     openai
       .createCompletion('text-curie-001', {
         prompt: userPrompt,
