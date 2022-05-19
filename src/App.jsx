@@ -27,7 +27,7 @@ function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
-    console.log(loading);
+
     // fetching API data
     const configuration = new Configuration({
       apiKey: process.env.REACT_APP_OPENAI_API_KEY,
