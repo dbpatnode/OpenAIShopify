@@ -12,6 +12,7 @@ function App() {
     const initialValue = JSON.parse(saved);
     return initialValue || [];
   });
+  // const [responses, setResponses] = useState([]);
 
   // grabs already saved prompts from locale storage
   useEffect(() => {
