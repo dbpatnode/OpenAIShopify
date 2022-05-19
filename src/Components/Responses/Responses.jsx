@@ -3,24 +3,32 @@ const Responses = ({ responses }) => {
     <div>
       <h3>Responses</h3>
       {responses?.map((resp, index) => {
-        const { response, prompt } = resp;
+        const { response, prompt, engine } = resp;
 
         return (
           <div className='Response' key={index}>
             <div>
               <p>
-                <span className='prompt'>
-                  <b>prompt:</b>
+                <span className='prompt-span'>
+                  <b>Prompt:</b>
                 </span>
                 <span>{prompt}</span>
               </p>
             </div>
             <div>
               <p>
-                <span>
-                  <b>response:</b>
+                <span className='response-span'>
+                  <b>Response:</b>
                 </span>
                 <span>{response}</span>
+              </p>
+            </div>
+            <div>
+              <p>
+                <span className='engine-span'>
+                  <b>Engine:</b>
+                </span>
+                <span>{engine}</span>
               </p>
             </div>
           </div>

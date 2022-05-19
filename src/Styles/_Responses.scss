@@ -1,6 +1,6 @@
 .Response {
   background-color: lightgray;
-  padding: 4px 8px;
+  padding: 4px 20px;
   margin: 12px 0px;
   border-radius: 4px;
 
@@ -8,10 +8,18 @@
     display: flex;
 
     span {
-      margin: 4px;
+      margin: 4px 0;
     }
-    .prompt {
-      margin-right: 16px !important;
+    .prompt-span {
+      margin-right: 39px !important;
+    }
+
+    .response-span {
+      margin-right: 19px;
+    }
+
+    .engine-span {
+      margin-right: 42px !important;
     }
   }
 }

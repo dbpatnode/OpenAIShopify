@@ -4,8 +4,6 @@ const Form = ({
   setUserPrompt,
   AIEngine,
   setAIEngine,
-  // handleChange,
-  // handleSelect,
 }) => {
   const engines = [
     {
@@ -45,30 +43,32 @@ const Form = ({
     <div className='Form'>
       <form onSubmit={(e) => handleSubmit(e)}>
         <span>
-          <label htmlFor='engines'>Choose a GPT-3 engine:</label>
+          <div className='upper-form'>
+            <label htmlFor='engines'>Choose a GPT-3 engine:</label>
 
-          <select
-            name='engines'
-            id='engines'
-            defaultValue={AIEngine}
-            onChange={(e) => handleSelect(e)}
-          >
-            {engines.map((engine) => {
-              const { engineName } = engine;
-              return (
-                <option key={engineName} value={engineName}>
-                  {engineName}
-                </option>
-              );
-            })}
-          </select>
-          <div>
-            <b>{AIEngine.engineName}</b>
-            <p>{AIEngine.engineDescription}</p>
+            <div class='select-dropdown'>
+              <select
+                name='engines'
+                id='engines'
+                defaultValue={AIEngine}
+                onChange={(e) => handleSelect(e)}
+              >
+                {engines.map((engine) => {
+                  const { engineName } = engine;
+                  return (
+                    <option key={engineName} value={engineName}>
+                      {engineName}
+                    </option>
+                  );
+                })}
+              </select>
+            </div>
+
+            <div className='engine-description'>
+              <b>{AIEngine.engineName}</b>
+              <p>{AIEngine.engineDescription}</p>
+            </div>
           </div>
-
-          {/* .find */}
-
           <textarea
             name='userPrompt'
             value={userPrompt}

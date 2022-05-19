@@ -5,6 +5,7 @@ const { Configuration, OpenAIApi } = require('openai');
 
 function App() {
   const [userPrompt, setUserPrompt] = useState('');
+
   const [AIEngine, setAIEngine] = useState({
     engineName: 'text-curie-001',
     engineDescription: 'Very capable, but faster and lower cost than Davinci.',
@@ -29,9 +30,10 @@ function App() {
       apiKey: process.env.REACT_APP_OPENAI_API_KEY,
     });
     const openai = new OpenAIApi(configuration);
+    const { engineName } = AIEngine;
 
     openai
-      .createCompletion(AIEngine.engineName, {
+      .createCompletion(engineName, {
         prompt: userPrompt,
         temperature: 0.5,
         max_tokens: 100,
@@ -46,6 +48,7 @@ function App() {
         let newData = {
           response: responseText,
           prompt: userPrompt,
+          engine: engineName,
         };
 
         copiedResponses.push(newData);
