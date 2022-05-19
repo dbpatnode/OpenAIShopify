@@ -1,10 +1,14 @@
 import { useState, useEffect } from 'react';
-import Form from './Form/Form';
-import Responses from './Responses/Responses';
+import Form from './Components/Form/Form';
+import Responses from './Components/Responses/Responses';
 const { Configuration, OpenAIApi } = require('openai');
 
 function App() {
   const [userPrompt, setUserPrompt] = useState('');
+  const [AIEngine, setAIEngine] = useState({
+    engineName: 'text-curie-001',
+    engineDescription: 'Very capable, but faster and lower cost than Davinci.',
+  });
 
   // locale storage used to persist prompts:
   const [responses, setResponses] = useState(() => {
@@ -27,7 +31,7 @@ function App() {
     const openai = new OpenAIApi(configuration);
 
     openai
-      .createCompletion('text-curie-001', {
+      .createCompletion(AIEngine, {
         prompt: userPrompt,
         temperature: 0.5,
         max_tokens: 100,
@@ -48,15 +52,11 @@ function App() {
 
         setResponses(copiedResponses);
         setUserPrompt('');
+      })
+      .catch((error) => {
+        alert(error.message);
       });
   };
-
-  const handleChange = (e) => {
-    const { value } = e.target;
-    setUserPrompt(value);
-  };
-
-  console.log(responses.length);
 
   return (
     <div className='App'>
@@ -64,7 +64,9 @@ function App() {
       <Form
         handleSubmit={handleSubmit}
         userPrompt={userPrompt}
-        handleChange={handleChange}
+        setUserPrompt={setUserPrompt}
+        AIEngine={AIEngine}
+        setAIEngine={setAIEngine}
       />
 
       {responses.length === 0 ? <></> : <Responses responses={responses} />}
