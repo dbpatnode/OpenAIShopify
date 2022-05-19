@@ -12,7 +12,6 @@ function App() {
     const initialValue = JSON.parse(saved);
     return initialValue || [];
   });
-  // const [responses, setResponses] = useState([]);
 
   // grabs already saved prompts from locale storage
   useEffect(() => {
@@ -22,7 +21,6 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     // fetching API data
     const configuration = new Configuration({
       apiKey: process.env.REACT_APP_OPENAI_API_KEY,
@@ -50,6 +48,7 @@ function App() {
         copiedResponses.push(newData);
 
         setResponses(copiedResponses);
+        setUserPrompt('');
       });
   };
 
@@ -64,6 +63,7 @@ function App() {
       <form onSubmit={(e) => handleSubmit(e)}>
         <textarea
           name='userPrompt'
+          value={userPrompt}
           onChange={(e) => handleChange(e)}
           placeholder='Enter prompt here...'
         />
