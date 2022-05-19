@@ -89,5 +89,13 @@
         background-color: scale-color(blue, $lightness: -20%);
       }
     }
+
+    button:disabled,
+    button[disabled] {
+      cursor: auto;
+      border: 1px solid #999999;
+      background-color: #cccccc;
+      color: #666666;
+    }
   }
 }

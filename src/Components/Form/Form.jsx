@@ -39,6 +39,7 @@ const Form = ({
     setAIEngine(selectedEngine);
   };
 
+  console.log(userPrompt);
   return (
     <div className='Form'>
       <form onSubmit={(e) => handleSubmit(e)}>
@@ -46,7 +47,7 @@ const Form = ({
           <div className='upper-form'>
             <label htmlFor='engines'>Choose a GPT-3 engine:</label>
 
-            <div class='select-dropdown'>
+            <div className='select-dropdown'>
               <select
                 name='engines'
                 id='engines'
@@ -77,7 +78,9 @@ const Form = ({
           />
         </span>
         <span>
-          <button type='submit'>Submit</button>
+          <button type='submit' disabled={userPrompt === ''}>
+            Submit
+          </button>
         </span>
       </form>
     </div>

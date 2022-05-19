@@ -51,7 +51,7 @@ function App() {
           engine: engineName,
         };
 
-        copiedResponses.push(newData);
+        copiedResponses.unshift(newData);
 
         setResponses(copiedResponses);
         setUserPrompt('');
