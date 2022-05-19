@@ -4,3 +4,9 @@
   justify-content: center;
   width: 50vw;
 }
+
+@media only screen and (max-width: 1025px) {
+  .App {
+    width: 90vw;
+  }
+}

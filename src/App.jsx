@@ -4,6 +4,7 @@ import Responses from './Components/Responses/Responses';
 const { Configuration, OpenAIApi } = require('openai');
 
 function App() {
+  const [loading, setLoading] = useState();
   const [userPrompt, setUserPrompt] = useState('');
 
   const [AIEngine, setAIEngine] = useState({
@@ -25,6 +26,8 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setLoading(true);
+    console.log(loading);
     // fetching API data
     const configuration = new Configuration({
       apiKey: process.env.REACT_APP_OPENAI_API_KEY,
@@ -54,6 +57,7 @@ function App() {
         copiedResponses.unshift(newData);
 
         setResponses(copiedResponses);
+        setLoading(false);
         setUserPrompt('');
       })
       .catch((error) => {
@@ -70,6 +74,7 @@ function App() {
         setUserPrompt={setUserPrompt}
         AIEngine={AIEngine}
         setAIEngine={setAIEngine}
+        loading={loading}
       />
 
       {responses.length === 0 ? <></> : <Responses responses={responses} />}

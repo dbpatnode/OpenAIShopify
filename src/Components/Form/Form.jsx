@@ -1,4 +1,5 @@
 import { engines } from '../../Data/engines';
+import Loading from '../Loading/Loading';
 
 const Form = ({
   handleSubmit,
@@ -6,6 +7,7 @@ const Form = ({
   setUserPrompt,
   AIEngine,
   setAIEngine,
+  loading,
 }) => {
   const handleChange = (e) => {
     const { value } = e.target;
@@ -17,6 +19,8 @@ const Form = ({
     let selectedEngine = engines.find((engine) => engine.engineName === value);
     setAIEngine(selectedEngine);
   };
+
+  console.log('loading: ', loading);
 
   return (
     <div className='Form'>
@@ -56,8 +60,8 @@ const Form = ({
           />
         </span>
         <span>
-          <button type='submit' disabled={userPrompt === ''}>
-            Submit
+          <button type='submit' disabled={userPrompt === '' || loading}>
+            {loading ? <Loading /> : 'Submit'}
           </button>
         </span>
       </form>
