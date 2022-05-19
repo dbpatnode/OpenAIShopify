@@ -31,7 +31,7 @@ function App() {
     const openai = new OpenAIApi(configuration);
 
     openai
-      .createCompletion(AIEngine, {
+      .createCompletion(AIEngine.engineName, {
         prompt: userPrompt,
         temperature: 0.5,
         max_tokens: 100,
