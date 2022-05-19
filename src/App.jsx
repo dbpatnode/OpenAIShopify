@@ -9,7 +9,6 @@ function App() {
 
   // locale storage used to persist prompts:
   const [responses, setResponses] = useState(() => {
-    // getting stored value
     const saved = localStorage.getItem('responses');
     const initialValue = JSON.parse(saved);
     return initialValue || [];
@@ -17,7 +16,6 @@ function App() {
 
   // grabs already saved prompts from locale storage
   useEffect(() => {
-    // storing input name
     localStorage.setItem('responses', JSON.stringify(responses));
   }, [responses]);
 
@@ -59,6 +57,8 @@ function App() {
     setUserPrompt(value);
   };
 
+  console.log(responses.length);
+
   return (
     <div className='App'>
       <h1>Fun with AI</h1>
@@ -68,7 +68,7 @@ function App() {
         handleChange={handleChange}
       />
 
-      <Responses responses={responses} />
+      {responses.length === 0 ? <></> : <Responses responses={responses} />}
     </div>
   );
 }
