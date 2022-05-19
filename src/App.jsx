@@ -1,5 +1,7 @@
-import './App.scss';
 import { useState, useEffect } from 'react';
+import './App.scss';
+import Form from './Form/Form';
+import Responses from './Responses/Responses';
 const { Configuration, OpenAIApi } = require('openai');
 
 function App() {
@@ -60,34 +62,13 @@ function App() {
   return (
     <div className='App'>
       <h1>Fun with AI</h1>
-      <form onSubmit={(e) => handleSubmit(e)}>
-        <textarea
-          name='userPrompt'
-          value={userPrompt}
-          onChange={(e) => handleChange(e)}
-          placeholder='Enter prompt here...'
-        />
+      <Form
+        handleSubmit={handleSubmit}
+        userPrompt={userPrompt}
+        handleChange={handleChange}
+      />
 
-        <button type='submit'>Submit</button>
-      </form>
-
-      <div>
-        <h3>Responses</h3>
-        {responses?.map((resp, index) => {
-          const { response, prompt } = resp;
-
-          return (
-            <div key={index}>
-              <div>
-                <b>prompt:</b> {prompt}
-              </div>
-              <div>
-                <b>response:</b> {response}
-              </div>
-            </div>
-          );
-        })}
-      </div>
+      <Responses responses={responses} />
     </div>
   );
 }
