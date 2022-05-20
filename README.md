@@ -1,6 +1,6 @@
 # OpenAI Shopify Assesment
 
-### built with OpenAI API, React, localstorage and SASS
+### built with OpenAI API, React, localstorage, SASS and FontAwesome 
 
 ## Available Scripts
 
