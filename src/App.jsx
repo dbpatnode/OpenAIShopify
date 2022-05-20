@@ -49,6 +49,7 @@ function App() {
         const copiedResponses = [...responses];
 
         let newData = {
+          id: copiedResponses.length,
           response: responseText,
           prompt: userPrompt,
           engine: engineName,
@@ -57,6 +58,8 @@ function App() {
         copiedResponses.unshift(newData);
 
         setResponses(copiedResponses);
+
+        console.log(responses);
         setLoading(false);
         setUserPrompt('');
       })
@@ -77,7 +80,11 @@ function App() {
         loading={loading}
       />
 
-      {responses.length === 0 ? <></> : <Responses responses={responses} />}
+      {responses.length === 0 ? (
+        <></>
+      ) : (
+        <Responses responses={responses} setResponses={setResponses} />
+      )}
     </div>
   );
 }

@@ -1,4 +1,16 @@
-const Responses = ({ responses }) => {
+const Responses = ({ responses, setResponses }) => {
+  const handleClick = (resp) => {
+    let matchingResponse = responses.find(
+      (response) => response.id === resp.id,
+    );
+
+    let filteredArray = responses.filter(
+      (response) => response !== matchingResponse,
+    );
+    setResponses(filteredArray);
+    localStorage.removeItem(JSON.stringify(resp));
+  };
+
   return (
     <div className='Responses-container'>
       <h3>Responses</h3>
@@ -7,6 +19,11 @@ const Responses = ({ responses }) => {
 
         return (
           <div className='Response' key={index}>
+            <span className='close'>
+              <button value={index} onClick={() => handleClick(resp)}>
+                <i className='fa fa-times'></i>
+              </button>
+            </span>
             <span>
               <p>
                 <span className='prompt-span'>
