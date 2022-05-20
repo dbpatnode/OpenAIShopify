@@ -38,7 +38,7 @@ A React application built as part of the Shopify Fall 2022 front end challenge.
 
 ## Hosting
 
-continuous deployment through Netlify.
+Continuous deployment through Netlify.
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/bd262b41-dd09-4550-a010-9d3f35daa32f/deploy-status)](https://app.netlify.com/sites/openaishopify/deploys)
 
