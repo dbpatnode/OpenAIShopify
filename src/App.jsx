@@ -33,6 +33,7 @@ function App() {
       apiKey: process.env.REACT_APP_OPENAI_API_KEY,
     });
     const openai = new OpenAIApi(configuration);
+
     const { engineName } = AIEngine;
 
     openai
@@ -49,7 +50,6 @@ function App() {
         const copiedResponses = [...responses];
 
         let newData = {
-          id: copiedResponses.length,
           response: responseText,
           prompt: userPrompt,
           engine: engineName,
@@ -59,7 +59,6 @@ function App() {
 
         setResponses(copiedResponses);
 
-        console.log(responses);
         setLoading(false);
         setUserPrompt('');
       })

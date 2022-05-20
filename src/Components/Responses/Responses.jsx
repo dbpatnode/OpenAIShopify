@@ -20,7 +20,7 @@ const Responses = ({ responses, setResponses }) => {
         return (
           <div className='Response' key={index}>
             <span className='close'>
-              <button value={index} onClick={() => handleClick(resp)}>
+              <button onClick={() => handleClick(resp)}>
                 <i className='fa fa-times'></i>
               </button>
             </span>
