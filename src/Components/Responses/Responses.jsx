@@ -12,7 +12,7 @@ const Responses = ({ responses }) => {
                 <span className='prompt-span'>
                   <b>Prompt:</b>
                 </span>
-                <span>{prompt}</span>
+                <span className='wrap'>{prompt}</span>
               </p>
             </span>
             <span>
@@ -20,7 +20,7 @@ const Responses = ({ responses }) => {
                 <span className='response-span'>
                   <b>Response:</b>
                 </span>
-                <span>{response}</span>
+                <span className='wrap'>{response}</span>
               </p>
             </span>
             <span>
@@ -28,7 +28,7 @@ const Responses = ({ responses }) => {
                 <span className='engine-span'>
                   <b>Engine:</b>
                 </span>
-                <span>{engine}</span>
+                <span className='wrap'>{engine}</span>
               </p>
             </span>
           </div>

@@ -15,8 +15,14 @@
     span {
       margin: 4px 0;
     }
+
+    .wrap {
+      width: 100%;
+      overflow-x: scroll;
+    }
+
     .prompt-span {
-      margin-right: 39px !important;
+      margin-right: 39px;
     }
 
     .response-span {
@@ -24,7 +30,7 @@
     }
 
     .engine-span {
-      margin-right: 42px !important;
+      margin-right: 42px;
     }
   }
 }
