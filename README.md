@@ -1,35 +1,46 @@
-# OpenAI Shopify Assesment
+# OpenAI Shopify Challenge
 
-### built with OpenAI API, React, localstorage, SASS and FontAwesome 
+## Description
+A React application built as part of the Shopify Fall 2022 front end challenge.
 
-## Available Scripts
 
-In the project directory, you can run:
+## Technologies / Libraries Used
+- [ReactJS](https://reactjs.org/)
+- [OpenAI](https://openai.com/)
+- [LocalStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
+- [SCSS](https://sass-lang.com/)
+- [FontAwesome](https://fontawesome.com/)
 
-`npm i`
 
-installs all dependencies
+## Features
+- Communicate with OpenAI API.
+- Switch between several AI engines and view corresponding descriptions of said AI.
+- AI responses are persisted through the use of localstorage.
+- Delete previous responses.
+- Submissions are disabled until all required inputs are filled.
+- Button displays loading icon while API does its magic.
 
-`npm start`
+### Setup
+- Clone this repository.
+- Install dependencies
+  ```
+  npm i
+  ```
+- Add .env file at the root directory of project. within .env include:
+  ```
+  REACT_APP_OPENAI_API_KEY=<API key from https://openai.com/api/>
+  ```
+- Run the application in development:
+  ```
+  npm start
+  ```
+- Go to [localhost:3000](http://localhost:3000/).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-## Deployment
+## Hosting
 
 continuous deployment through Netlify.
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/bd262b41-dd09-4550-a010-9d3f35daa32f/deploy-status)](https://app.netlify.com/sites/openaishopify/deploys)
 
-In project directory run:
+You can view the live project [here](https://openaishopify.netlify.app/)
 
-`git add .`
-
-`git commit -m 'your commit message'`
-
-`git push`
-
-project will be automatically deployed.
