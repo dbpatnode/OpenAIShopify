@@ -1,5 +1,11 @@
+.Responses-container {
+  div:first-of-type {
+    // background-color: rgb(187, 187, 187);
+    background-image: linear-gradient(rgb(187, 187, 187), rgb(222, 221, 221));
+  }
+}
 .Response {
-  background-color: lightgray;
+  background-color: rgb(222, 221, 221);
   padding: 4px 20px;
   margin: 12px 0px;
   border-radius: 4px;
