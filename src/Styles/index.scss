@@ -1,6 +1,10 @@
 @import 'App';
+@import 'Nav';
+@import 'Home';
 @import 'Form';
 @import 'Responses';
+@import 'AIContainer';
+@import 'YoutubeEmbeded';
 
 * {
   box-sizing: border-box;
@@ -20,4 +24,14 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.w-70 {
+  width: 70%;
+}
+
+@media only screen and (max-width: 1025px) {
+  .w-70 {
+    width: 90%;
+  }
 }

@@ -12,7 +12,7 @@ const Responses = ({ responses, setResponses }) => {
   };
 
   return (
-    <div className='Responses-container'>
+    <div className='Responses-container w-70'>
       <h3>Responses</h3>
       {responses?.map((resp, index) => {
         const { response, prompt, engine } = resp;

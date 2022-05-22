@@ -20,7 +20,7 @@ const Form = ({
   };
 
   return (
-    <div className='Form'>
+    <div className='Form w-70'>
       <form onSubmit={(e) => handleSubmit(e)}>
         <span>
           <div className='upper-form'>
