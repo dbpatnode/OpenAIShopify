@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import Form from '../Form/Form';
 import Responses from '../Responses/Responses';
+import ResponseFilter from '../ResponseFilter/ResponseFilter';
 const { Configuration, OpenAIApi } = require('openai');
 
 const AIContainer = () => {
@@ -83,7 +84,10 @@ const AIContainer = () => {
         {responses.length === 0 ? (
           <></>
         ) : (
-          <Responses responses={responses} setResponses={setResponses} />
+          <div className='container'>
+            <ResponseFilter responses={responses} />
+            <Responses responses={responses} setResponses={setResponses} />
+          </div>
         )}
       </div>
     </div>

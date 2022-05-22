@@ -11,6 +11,7 @@ const Responses = ({ responses, setResponses }) => {
     localStorage.removeItem(JSON.stringify(resp));
   };
 
+
   return (
     <div className='Responses-container w-70'>
       <h3>Responses</h3>
