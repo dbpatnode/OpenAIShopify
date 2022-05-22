@@ -68,7 +68,7 @@ const AIContainer = () => {
   };
 
   return (
-    <div className='AIContent'>
+    <div className='AIContent w-70'>
       <div className='container'>
         <h1>Fun with AI</h1>
         <Form

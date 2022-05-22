@@ -1,12 +1,10 @@
 .Home {
-  //   display: flex;
-  //   flex-direction: column;
-  //   justify-content: center;
-  //   align-items: center;
-  //   text-align: center;
-  background-color: pink;
-
   header {
     text-align: center;
+  }
+
+  p {
+    line-height: 1.5em;
+    padding-bottom: 18px;
   }
 }
