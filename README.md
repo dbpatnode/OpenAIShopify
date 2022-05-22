@@ -1,12 +1,14 @@
 # OpenAI Shopify Challenge
 
 ## Description
+
 A React application built as part of the Shopify Fall 2022 front end challenge.
 
-![AIForm](https://imgur.com/qvuH1kx)
-![AIHome](https://imgur.com/JwVNJQk)
+![AIHome](/public/AIHomePage.png)
+![AIForm](/public/AIForm.png)
 
 ## Technologies / Libraries Used
+
 - [ReactJS](https://reactjs.org/)
 - [React Router](https://reactrouter.com/docs/en/v6)
 - [OpenAI](https://openai.com/)
@@ -14,8 +16,8 @@ A React application built as part of the Shopify Fall 2022 front end challenge.
 - [SCSS](https://sass-lang.com/)
 - [FontAwesome](https://fontawesome.com/)
 
-
 ## Features
+
 - Communicate with OpenAI API.
 - Switch between several AI engines and view corresponding descriptions of said AI.
 - AI responses are persisted through the use of localstorage.
@@ -24,6 +26,7 @@ A React application built as part of the Shopify Fall 2022 front end challenge.
 - Button displays loading icon while API does its magic.
 
 ### Setup
+
 - Clone this repository.
 - Install dependencies
   ```
@@ -46,4 +49,3 @@ Continuous deployment through Netlify.
 [![Netlify Status](https://api.netlify.com/api/v1/badges/bd262b41-dd09-4550-a010-9d3f35daa32f/deploy-status)](https://app.netlify.com/sites/openaishopify/deploys)
 
 You can view the live project [here](https://openaishopify.netlify.app/)
-
