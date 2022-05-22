@@ -4,8 +4,22 @@
 
 A React application built as part of the Shopify Fall 2022 front end challenge.
 
-![AIHome](/public/AIHomePage.png)
-![AIForm](/public/AIForm.png)
+<div style='display: flex; padding:20px'>
+  <span style='display: flex; justify-content: center; align-items:center'>
+    <img src='./public/MobileAIForm.png' alt='mobile-form' width='50%'>
+  </span>
+  <span style='display: flex; justify-content: center; align-items:center'>
+    <img src='./public/MobileAIHome.png' alt='mobile-home' width='50%'>
+  </span>
+</div>
+<div style='display: flex; padding-bottom: 20px;'>
+  <span style='display: flex; justify-content: center; align-items:center'>
+    <img src='./public/AIHomePage.png' alt='mobile-form' width='95%'>
+  </span>
+  <span style='display: flex; justify-content: center; align-items:center'>
+    <img src='./public/AIForm.png' alt='mobile-home' width='95%'>
+  </span>
+</div>
 
 ## Technologies / Libraries Used
 
