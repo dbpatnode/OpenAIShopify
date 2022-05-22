@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Nav from './Components/Nav/Nav';
 import Home from './Components/Home/Home';
 import AIContainer from './Components/AIContainer/AIContainer';
+import { useCurrentPath } from './Helpers/useCurrentPath';
 
 function App() {
   const [routes] = useState([
@@ -18,18 +19,18 @@ function App() {
     },
   ]);
 
+  const currentPath = useCurrentPath(routes);
+
   return (
-    <div className='App'>
-      <BrowserRouter>
-        <Nav routes={routes} />
-        <Routes>
-          {routes.map((route, i) => {
-            return (
-              <Route key={i} path={`/${route.path}`} element={route.element} />
-            );
-          })}
-        </Routes>
-      </BrowserRouter>
+    <div className={currentPath === '' ? 'App cool-bg' : 'App'}>
+      <Nav routes={routes} />
+      <Routes>
+        {routes.map((route, i) => {
+          return (
+            <Route key={i} path={`/${route.path}`} element={route.element} />
+          );
+        })}
+      </Routes>
     </div>
   );
 }
