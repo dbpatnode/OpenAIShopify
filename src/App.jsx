@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Nav from './Components/Nav/Nav';
 import Home from './Components/Home/Home';
 import AIContainer from './Components/AIContainer/AIContainer';
@@ -19,6 +19,7 @@ function App() {
     },
   ]);
 
+  // check helpers folders for custom hooks:
   const currentPath = useCurrentPath(routes);
 
   return (
