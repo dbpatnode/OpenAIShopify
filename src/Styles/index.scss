@@ -29,3 +29,9 @@ code {
 .w-70 {
   width: 70%;
 }
+
+@media only screen and (max-width: 1025px) {
+  .w-70 {
+    width: 90%;
+  }
+}

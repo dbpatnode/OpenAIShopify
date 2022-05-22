@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 const Nav = ({ routes }) => {
   return (
     <div className='Nav'>
-      {routes.map((route) => {
+      {routes.map((route, i) => {
         return (
-          <Link to={`/${route.path}`} className='link'>
+          <Link key={i} to={`/${route.path}`} className='link'>
             {route.linkText}
           </Link>
         );
