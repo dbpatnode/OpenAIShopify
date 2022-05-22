@@ -1,4 +1,5 @@
 .Form {
+  width: 70%;
   form {
     display: flex;
     flex-direction: column;
@@ -108,5 +109,11 @@
       margin-right: 5px;
       color: #b8b8b8;
     }
+  }
+}
+
+@media only screen and (max-width: 1025px) {
+  .Form {
+    width: 90%;
   }
 }

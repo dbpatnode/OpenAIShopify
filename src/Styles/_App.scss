@@ -1,12 +1,12 @@
-.AIContent {
+.App {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 50vw;
+  width: 100vw;
 }
 
-@media only screen and (max-width: 1025px) {
-  .App {
-    width: 90vw;
-  }
-}
+// @media only screen and (max-width: 1025px) {
+//   .App {
+//     width: vw;
+//   }
+// }

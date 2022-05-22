@@ -19,8 +19,9 @@ function App() {
   ]);
 
   return (
-    <BrowserRouter>
-      {/* <div>
+    <div className='App'>
+      <BrowserRouter>
+        {/* <div>
         {routes.map((route) => {
           return (
             <Link to={`/${route.path}`} className='link'>
@@ -29,14 +30,15 @@ function App() {
           );
         })}
       </div> */}
-      <Nav routes={routes} />
+        <Nav routes={routes} />
 
-      <Routes>
-        {routes.map((route) => {
-          return <Route path={`/${route.path}`} element={route.element} />;
-        })}
-      </Routes>
-    </BrowserRouter>
+        <Routes>
+          {routes.map((route) => {
+            return <Route path={`/${route.path}`} element={route.element} />;
+          })}
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
 }
 

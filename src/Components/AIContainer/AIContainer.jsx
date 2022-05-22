@@ -69,21 +69,23 @@ const AIContainer = () => {
 
   return (
     <div className='AIContent'>
-      <h1>Fun with AI</h1>
-      <Form
-        handleSubmit={handleSubmit}
-        userPrompt={userPrompt}
-        setUserPrompt={setUserPrompt}
-        AIEngine={AIEngine}
-        setAIEngine={setAIEngine}
-        loading={loading}
-      />
+      <div className='container'>
+        <h1>Fun with AI</h1>
+        <Form
+          handleSubmit={handleSubmit}
+          userPrompt={userPrompt}
+          setUserPrompt={setUserPrompt}
+          AIEngine={AIEngine}
+          setAIEngine={setAIEngine}
+          loading={loading}
+        />
 
-      {responses.length === 0 ? (
-        <></>
-      ) : (
-        <Responses responses={responses} setResponses={setResponses} />
-      )}
+        {responses.length === 0 ? (
+          <></>
+        ) : (
+          <Responses responses={responses} setResponses={setResponses} />
+        )}
+      </div>
     </div>
   );
 };
