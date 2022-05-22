@@ -4,7 +4,9 @@
 
 A React application built as part of the Shopify Fall 2022 front end challenge.
 
-<div style='display: flex; padding:20px'>
+![views](/public/views.png)
+
+<!-- <div style='display: flex; padding:20px'>
   <span style='display: flex; justify-content: center; align-items:center'>
     <img src='./public/MobileAIForm.png' alt='mobile-form' width='50%'>
   </span>
@@ -19,7 +21,7 @@ A React application built as part of the Shopify Fall 2022 front end challenge.
   <span style='display: flex; justify-content: center; align-items:center'>
     <img src='./public/AIForm.png' alt='mobile-home' width='95%'>
   </span>
-</div>
+</div> -->
 
 ## Technologies / Libraries Used
 
