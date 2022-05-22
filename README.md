@@ -3,9 +3,12 @@
 ## Description
 A React application built as part of the Shopify Fall 2022 front end challenge.
 
+![AIForm](https://imgur.com/qvuH1kx)
+![AIHome](https://imgur.com/JwVNJQk)
 
 ## Technologies / Libraries Used
 - [ReactJS](https://reactjs.org/)
+- [React Router](https://reactrouter.com/docs/en/v6)
 - [OpenAI](https://openai.com/)
 - [LocalStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
 - [SCSS](https://sass-lang.com/)
