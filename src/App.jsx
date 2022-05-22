@@ -1,12 +1,10 @@
 import { useState } from 'react';
-import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Nav from './Components/Nav/Nav';
 import Home from './Components/Home/Home';
 import AIContainer from './Components/AIContainer/AIContainer';
 
 function App() {
-  // let navigate = useNavigate();
-
   const [routes] = useState([
     {
       path: '',
@@ -19,7 +17,7 @@ function App() {
       linkText: 'Fun With AI',
     },
   ]);
-  // console.log(navigate);
+
   return (
     <div className='App'>
       <BrowserRouter>
