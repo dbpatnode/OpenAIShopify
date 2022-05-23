@@ -23,10 +23,11 @@
     min-height: 44px;
     text-align: center;
     line-height: 1.1;
-    transition: 220ms all ease-in-out;
+    transition: 330ms all ease-in-out;
 
     &:hover {
       border: 3px solid blue;
+      background-color: scale-color(blue, $lightness: 55%);
     }
     @media screen and (-ms-high-contrast: active) {
       border: 2px solid currentcolor;
