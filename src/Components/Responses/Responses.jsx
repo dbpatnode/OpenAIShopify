@@ -1,4 +1,4 @@
-const Responses = ({ responses, setResponses }) => {
+const Responses = ({ responses, setResponses, filterBy }) => {
   const handleClick = (resp) => {
     let matchingResponse = responses.find(
       (response) => response.id === resp.id,
@@ -11,11 +11,18 @@ const Responses = ({ responses, setResponses }) => {
     localStorage.removeItem(JSON.stringify(resp));
   };
 
-
+  const filteredResponeses = () => {
+    if (filterBy === 'All') {
+      return responses;
+    } else {
+      return responses.filter((response) => response.engine === filterBy);
+    }
+  };
   return (
     <div className='Responses-container w-70'>
       <h3>Responses</h3>
-      {responses?.map((resp, index) => {
+      {filteredResponeses()?.map((resp, index) => {
+        console.log(resp);
         const { response, prompt, engine } = resp;
 
         return (

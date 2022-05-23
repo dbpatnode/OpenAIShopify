@@ -7,8 +7,9 @@ const { Configuration, OpenAIApi } = require('openai');
 const AIContainer = () => {
   const [loading, setLoading] = useState();
   const [userPrompt, setUserPrompt] = useState('');
-  const [filteredResponses, setFilteredResponeses] = useState();
-  // const [filteredResponeses, setFilteredResponeses] = useState();
+  const [filterBy, setFilterBy] = useState('All');
+  console.log('filterBy: ', filterBy);
+  // const [filteredResponeses, setFilterBy] = useState();
 
   const [AIEngine, setAIEngine] = useState({
     engineName: 'text-curie-001',
@@ -87,15 +88,11 @@ const AIContainer = () => {
           <></>
         ) : (
           <div className='container'>
-            <ResponseFilter
-              responses={responses}
-              setFilteredResponeses={setFilteredResponeses}
-              filteredResponses={filteredResponses}
-            />
+            <ResponseFilter responses={responses} setFilterBy={setFilterBy} />
             <Responses
               responses={responses}
               setResponses={setResponses}
-              filteredResponses={filteredResponses}
+              filterBy={filterBy}
             />
           </div>
         )}

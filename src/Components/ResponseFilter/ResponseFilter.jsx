@@ -1,12 +1,8 @@
 import { useState } from 'react';
 
-const ResponseFilter = ({
-  responses,
-  setFilteredResponeses,
-  filteredResponses,
-}) => {
+const ResponseFilter = ({ responses, setFilterBy }) => {
   const [selectedAI, setSelectedAI] = useState('All');
-  console.log('selectedAI: ', selectedAI);
+
   const filterValues = [
     'All',
     'text-curie-001',
@@ -15,27 +11,17 @@ const ResponseFilter = ({
     'text-ada-001',
   ];
 
+  console.log('responses: ', responses);
+
   const handleFilterChange = (e) => {
-    console.log(e.target.name);
     const { name } = e.target;
+    setFilterBy(name);
     setSelectedAI(name);
-
-    const newArray = [];
-
-    responses.forEach((response) => {
-      const responseAsArray = Object.entries(response);
-
-      if (responseAsArray[2].includes(name)) {
-        newArray.push(response);
-        setFilteredResponeses(newArray);
-        console.log(filteredResponses);
-      }
-    });
   };
 
   return (
     <div className='ResponseFilter w-70'>
-      {/* <label>Filter:</label> */}
+      <label>Filter:</label>
       {filterValues.map((value) => {
         const selected = selectedAI === value;
         return (
