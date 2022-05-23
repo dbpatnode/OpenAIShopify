@@ -86,7 +86,11 @@ const AIContainer = () => {
           <></>
         ) : (
           <div className='container'>
-            <ResponseFilter responses={responses} setFilterBy={setFilterBy} />
+            <ResponseFilter
+              responses={responses}
+              setFilterBy={setFilterBy}
+              filterBy={filterBy}
+            />
             <Responses
               responses={responses}
               setResponses={setResponses}

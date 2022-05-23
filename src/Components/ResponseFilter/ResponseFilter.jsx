@@ -1,8 +1,4 @@
-import { useState } from 'react';
-
-const ResponseFilter = ({ setFilterBy }) => {
-  const [selectedAI, setSelectedAI] = useState('All');
-
+const ResponseFilter = ({ setFilterBy, filterBy }) => {
   const filterValues = [
     'All',
     'text-curie-001',
@@ -14,7 +10,6 @@ const ResponseFilter = ({ setFilterBy }) => {
   const handleFilterChange = (e) => {
     const { name } = e.target;
     setFilterBy(name);
-    setSelectedAI(name);
   };
 
   return (
@@ -22,7 +17,7 @@ const ResponseFilter = ({ setFilterBy }) => {
       <label>Filter by AI engine:</label>
       <div className='ResponseFilter'>
         {filterValues.map((value) => {
-          const selected = selectedAI === value;
+          const selected = filterBy === value;
           return (
             <button
               key={value}
