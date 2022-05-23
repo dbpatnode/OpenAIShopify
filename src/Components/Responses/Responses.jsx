@@ -18,47 +18,56 @@ const Responses = ({ responses, setResponses, filterBy }) => {
       return responses.filter((response) => response.engine === filterBy);
     }
   };
+
   return (
     <div className='Responses-container w-70'>
       <h3>Responses</h3>
-      {filteredResponeses()?.map((resp, index) => {
-        console.log(resp);
-        const { response, prompt, engine } = resp;
 
-        return (
-          <div className='Response' key={index}>
-            <span className='close'>
-              <button onClick={() => handleClick(resp)}>
-                <i className='fa fa-times'></i>
-              </button>
-            </span>
-            <span>
-              <p>
-                <span className='prompt-span'>
-                  <b>Prompt:</b>
+      {filteredResponeses().length === 0 ? (
+        <div className='no-response'>
+          No responses using that AI engine found...
+        </div>
+      ) : (
+        <>
+          {filteredResponeses()?.map((resp, index) => {
+            const { response, prompt, engine } = resp;
+
+            return (
+              <div className='Response' key={index}>
+                <span className='close'>
+                  <button onClick={() => handleClick(resp)}>
+                    <i className='fa fa-times'></i>
+                  </button>
                 </span>
-                <span className='wrap'>{prompt}</span>
-              </p>
-            </span>
-            <span>
-              <p>
-                <span className='response-span'>
-                  <b>Response:</b>
+                <span>
+                  <p>
+                    <span className='prompt-span'>
+                      <b>Prompt:</b>
+                    </span>
+                    <span className='wrap'>{prompt}</span>
+                  </p>
                 </span>
-                <span className='wrap'>{response}</span>
-              </p>
-            </span>
-            <span>
-              <p>
-                <span className='engine-span'>
-                  <b>Engine:</b>
+                <span>
+                  <p>
+                    <span className='response-span'>
+                      <b>Response:</b>
+                    </span>
+                    <span className='wrap'>{response}</span>
+                  </p>
                 </span>
-                <span className='wrap'>{engine}</span>
-              </p>
-            </span>
-          </div>
-        );
-      })}
+                <span>
+                  <p>
+                    <span className='engine-span'>
+                      <b>Engine:</b>
+                    </span>
+                    <span className='wrap'>{engine}</span>
+                  </p>
+                </span>
+              </div>
+            );
+          })}
+        </>
+      )}
     </div>
   );
 };

@@ -8,8 +8,6 @@ const AIContainer = () => {
   const [loading, setLoading] = useState();
   const [userPrompt, setUserPrompt] = useState('');
   const [filterBy, setFilterBy] = useState('All');
-  console.log('filterBy: ', filterBy);
-  // const [filteredResponeses, setFilterBy] = useState();
 
   const [AIEngine, setAIEngine] = useState({
     engineName: 'text-curie-001',

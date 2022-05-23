@@ -1,4 +1,15 @@
 .Responses-container {
+  .no-response {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+    color: rgb(120, 120, 120);
+    background-image: linear-gradient(
+      rgb(255, 255, 255),
+      rgb(255, 255, 255)
+    ) !important;
+  }
   div:first-of-type {
     background-image: linear-gradient(rgb(187, 187, 187), rgb(222, 221, 221));
   }

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const ResponseFilter = ({ responses, setFilterBy }) => {
+const ResponseFilter = ({ setFilterBy }) => {
   const [selectedAI, setSelectedAI] = useState('All');
 
   const filterValues = [
@@ -11,8 +11,6 @@ const ResponseFilter = ({ responses, setFilterBy }) => {
     'text-ada-001',
   ];
 
-  console.log('responses: ', responses);
-
   const handleFilterChange = (e) => {
     const { name } = e.target;
     setFilterBy(name);
@@ -20,21 +18,23 @@ const ResponseFilter = ({ responses, setFilterBy }) => {
   };
 
   return (
-    <div className='ResponseFilter w-70'>
-      <label>Filter:</label>
-      {filterValues.map((value) => {
-        const selected = selectedAI === value;
-        return (
-          <button
-            key={value}
-            name={value}
-            onClick={(e) => handleFilterChange(e)}
-            className={selected ? 'active' : ''}
-          >
-            {value}
-          </button>
-        );
-      })}
+    <div className='w-70'>
+      <label>Filter by AI engine:</label>
+      <div className='ResponseFilter'>
+        {filterValues.map((value) => {
+          const selected = selectedAI === value;
+          return (
+            <button
+              key={value}
+              name={value}
+              onClick={(e) => handleFilterChange(e)}
+              className={selected ? 'active' : ''}
+            >
+              {value}
+            </button>
+          );
+        })}
+      </div>
     </div>
   );
 };
