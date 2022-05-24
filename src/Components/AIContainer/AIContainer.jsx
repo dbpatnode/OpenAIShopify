@@ -81,23 +81,22 @@ const AIContainer = () => {
           setAIEngine={setAIEngine}
           loading={loading}
         />
-
-        {responses.length === 0 ? (
+        {/* {responses.length === 0 ? (
           <></>
-        ) : (
-          <div className='container'>
-            <ResponseFilter
-              responses={responses}
-              setFilterBy={setFilterBy}
-              filterBy={filterBy}
-            />
-            <Responses
-              responses={responses}
-              setResponses={setResponses}
-              filterBy={filterBy}
-            />
-          </div>
-        )}
+        ) : ( */}
+        <div className='container'>
+          <ResponseFilter
+            responses={responses}
+            setFilterBy={setFilterBy}
+            filterBy={filterBy}
+          />
+          <Responses
+            responses={responses}
+            setResponses={setResponses}
+            filterBy={filterBy}
+          />
+        </div>
+        ){/* } */}
       </div>
     </div>
   );
