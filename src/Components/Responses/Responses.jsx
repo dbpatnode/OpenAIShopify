@@ -21,11 +21,9 @@ const Responses = ({ responses, setResponses, filterBy }) => {
 
   return (
     <div className='Responses-container w-70'>
-      <h3>Responses</h3>
-
       {filteredResponeses().length === 0 ? (
         <div className='no-response'>
-          No responses using that AI engine found...
+          <p>No responses found...</p>
         </div>
       ) : (
         <>
@@ -34,11 +32,15 @@ const Responses = ({ responses, setResponses, filterBy }) => {
 
             return (
               <div className='Response' key={index}>
-                <span className='close'>
-                  <button onClick={() => handleClick(resp)}>
-                    <i className='fa fa-times'></i>
-                  </button>
+                <span className='response-card-top'>
+                  <span className={`engine ${engine}-color`}>{engine}</span>
+                  <span className='close'>
+                    <button onClick={() => handleClick(resp)}>
+                      <i className='fa fa-times'></i>
+                    </button>
+                  </span>
                 </span>
+
                 <span>
                   <p>
                     <span className='prompt-span'>
@@ -53,14 +55,6 @@ const Responses = ({ responses, setResponses, filterBy }) => {
                       <b>Response:</b>
                     </span>
                     <span className='wrap'>{response}</span>
-                  </p>
-                </span>
-                <span>
-                  <p>
-                    <span className='engine-span'>
-                      <b>Engine:</b>
-                    </span>
-                    <span className='wrap'>{engine}</span>
                   </p>
                 </span>
               </div>

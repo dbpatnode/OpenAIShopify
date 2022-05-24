@@ -81,9 +81,6 @@ const AIContainer = () => {
           setAIEngine={setAIEngine}
           loading={loading}
         />
-        {/* {responses.length === 0 ? (
-          <></>
-        ) : ( */}
         <div className='container'>
           <ResponseFilter
             responses={responses}
@@ -96,7 +93,6 @@ const AIContainer = () => {
             filterBy={filterBy}
           />
         </div>
-        ){/* } */}
       </div>
     </div>
   );

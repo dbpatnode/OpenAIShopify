@@ -3,7 +3,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 40px;
+    margin: 40px;
+
     color: rgb(120, 120, 120);
     background-image: linear-gradient(
       rgb(255, 255, 255),
@@ -20,21 +21,41 @@
   margin: 12px 0px;
   border-radius: 4px;
 
-  .close {
-    float: right;
+  .response-card-top {
+    .engine {
+      font-size: 14px;
+    }
 
-    button {
-      border: 0px solid black;
-      background-color: rgba(0, 0, 0, 0);
-      cursor: pointer;
-      i {
-        font-size: 24px;
-        transition: 220ms all ease-in-out;
+    .text-curie-001-color {
+      color: scale-color(#7d84b2, $lightness: -20%);
+    }
 
-        &:hover,
-        &:active {
-          color: scale-color(black, $lightness: -10%);
-          filter: drop-shadow(2px 4px 8px #585858);
+    .text-davinci-002-color {
+      color: scale-color(#8aa399, $lightness: -20%);
+    }
+    .text-babbage-001-color {
+      color: scale-color(#987d7c, $lightness: -20%);
+    }
+
+    .text-ada-001-color {
+      color: scale-color(#82aeb1, $lightness: -20%);
+    }
+
+    .close {
+      float: right;
+      button {
+        border: 0px solid black;
+        background-color: rgba(0, 0, 0, 0);
+        cursor: pointer;
+        i {
+          font-size: 24px;
+          transition: 220ms all ease-in-out;
+
+          &:hover,
+          &:active {
+            color: scale-color(black, $lightness: -10%);
+            filter: drop-shadow(2px 4px 8px #585858);
+          }
         }
       }
     }
@@ -58,10 +79,6 @@
 
     .response-span {
       margin-right: 19px;
-    }
-
-    .engine-span {
-      margin-right: 42px;
     }
   }
 }
