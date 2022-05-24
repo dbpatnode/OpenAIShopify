@@ -38,6 +38,7 @@ A React application built as part of the Shopify Fall 2022 front end challenge.
 - Switch between several AI engines and view corresponding descriptions of said AI.
 - AI responses are persisted through the use of localstorage.
 - Delete previous responses.
+- Filter responses based upon AI engine choosen.
 - Submissions are disabled until all required inputs are filled.
 - Button displays loading icon while API does its magic.
 
