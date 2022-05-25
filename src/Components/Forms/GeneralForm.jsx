@@ -89,7 +89,8 @@ const Form = ({
           </span>
         </div>
 
-        <div>
+        <div className='instructions'>
+          <b>Instructions: </b>
           <label>{instructions}</label>
         </div>
         <div>
