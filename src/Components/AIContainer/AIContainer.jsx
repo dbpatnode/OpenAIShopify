@@ -50,7 +50,7 @@ const AIContainer = () => {
       .createCompletion(engineName, {
         prompt: `${AIPrompt.prompt}${userPrompt}`,
         temperature: 0.5,
-        max_tokens: 60,
+        max_tokens: 400,
         top_p: 0.3,
         frequency_penalty: 0.5,
         presence_penalty: 0.0,

@@ -15,4 +15,11 @@ export const prompts = [
     instructions:
       'Ask it a question, have it write you a list, poem, story. whatever you can think of.',
   },
+  {
+    promptName: 'Recepie Creator',
+    promptDescription: 'Recipe creater bot',
+    prompt: 'Write a recipe based on these ingredients and instructions:',
+    instructions:
+      'Add several different food items/ingredients. Bot will create a recipe based off of your input, with instructions.',
+  },
 ];
