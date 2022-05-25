@@ -2,7 +2,8 @@ import { useState, useEffect } from 'react';
 import GeneralForm from '../Forms/GeneralForm';
 import Responses from '../Responses/Responses';
 import ResponseFilter from '../ResponseFilter/ResponseFilter';
-const { Configuration, OpenAIApi } = require('openai');
+
+// const { Configuration, OpenAIApi } = require('openai');
 
 const AIContainer = () => {
   const [loading, setLoading] = useState();
@@ -13,7 +14,7 @@ const AIContainer = () => {
     promptDescription: 'A general chat bot.',
     prompt: '',
     instructions:
-      'Ask it a question, have it write you a list, poem, story. whatever you can think of.',
+      'Ask it a question, have it write you a list, poem, story, whatever you can think of.',
   });
 
   const [AIEngine, setAIEngine] = useState({
@@ -34,29 +35,35 @@ const AIContainer = () => {
   }, [responses]);
 
   const handleSubmit = (e) => {
-    e.preventDefault();
     setLoading(true);
-
-    // fetching API data
-    const configuration = new Configuration({
-      apiKey: process.env.REACT_APP_OPENAI_API_KEY,
-    });
-    const openai = new OpenAIApi(configuration);
-
+    e.preventDefault();
     const { engineName } = AIEngine;
 
-    // prompt: userPrompt,
-    openai
-      .createCompletion(engineName, {
-        prompt: `${AIPrompt.prompt}${userPrompt}`,
-        temperature: 0.5,
-        max_tokens: 400,
-        top_p: 0.3,
-        frequency_penalty: 0.5,
-        presence_penalty: 0.0,
-      })
+    const APIKey = process.env.REACT_APP_OPENAI_API_KEY_NEW;
+
+    const data = {
+      prompt: `${AIPrompt.prompt}${userPrompt}`,
+      temperature: 0.5,
+      max_tokens: 400,
+      top_p: 0.3,
+      frequency_penalty: 0.5,
+      presence_penalty: 0.0,
+    };
+    const request = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${APIKey}`,
+      },
+      body: JSON.stringify(data),
+    };
+    fetch(
+      `https://api.openai.com/v1/engines/${engineName}/completions`,
+      request,
+    )
+      .then((response) => response.json())
       .then((resp) => {
-        const responseText = resp.data.choices[0].text;
+        const responseText = resp.choices[0].text;
         const copiedResponses = [...responses];
 
         let newData = {
@@ -68,12 +75,8 @@ const AIContainer = () => {
         copiedResponses.unshift(newData);
 
         setResponses(copiedResponses);
-
         setLoading(false);
         setUserPrompt('');
-      })
-      .catch((error) => {
-        alert(error.message);
       });
   };
 
