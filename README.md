@@ -62,7 +62,7 @@ A React application built as part of the Shopify Fall 2022 front end challenge.
   ```
 - Add .env file at the root directory of project. within .env include:
   ```
-  REACT_APP_OPENAI_API_KEY=<API key from https://openai.com/api/>
+  REACT_APP_OPENAI_API_KEY_NEW=<API key from https://openai.com/api/>
   ```
 - Run the application in development:
   ```
