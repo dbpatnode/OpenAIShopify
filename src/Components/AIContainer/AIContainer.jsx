@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import Form from '../Form/Form';
+import GeneralForm from '../Forms/GeneralForm';
 import Responses from '../Responses/Responses';
 import ResponseFilter from '../ResponseFilter/ResponseFilter';
 const { Configuration, OpenAIApi } = require('openai');
@@ -8,6 +8,13 @@ const AIContainer = () => {
   const [loading, setLoading] = useState();
   const [userPrompt, setUserPrompt] = useState('');
   const [filterBy, setFilterBy] = useState('All');
+  const [AIPrompt, setAIPrompt] = useState({
+    promptName: 'Chat',
+    promptDescription: 'A general chat bot.',
+    prompt: '',
+    instructions:
+      'Ask it a question, have it write you a list, poem, story. whatever you can think of.',
+  });
 
   const [AIEngine, setAIEngine] = useState({
     engineName: 'text-curie-001',
@@ -38,14 +45,15 @@ const AIContainer = () => {
 
     const { engineName } = AIEngine;
 
+    // prompt: userPrompt,
     openai
       .createCompletion(engineName, {
-        prompt: userPrompt,
+        prompt: `${AIPrompt.prompt}${userPrompt}`,
         temperature: 0.5,
-        max_tokens: 100,
-        top_p: 1,
-        frequency_penalty: 0,
-        presence_penalty: 0,
+        max_tokens: 60,
+        top_p: 0.3,
+        frequency_penalty: 0.5,
+        presence_penalty: 0.0,
       })
       .then((resp) => {
         const responseText = resp.data.choices[0].text;
@@ -73,12 +81,14 @@ const AIContainer = () => {
     <div className='AIContent w-70'>
       <div className='container'>
         <h1>Fun with AI</h1>
-        <Form
+        <GeneralForm
           handleSubmit={handleSubmit}
           userPrompt={userPrompt}
           setUserPrompt={setUserPrompt}
           AIEngine={AIEngine}
           setAIEngine={setAIEngine}
+          AIPrompt={AIPrompt}
+          setAIPrompt={setAIPrompt}
           loading={loading}
         />
         <div className='container'>
