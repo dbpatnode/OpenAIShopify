@@ -36,7 +36,7 @@ A React application built as part of the Shopify Fall 2022 front end challenge.
 
 - Communicate with OpenAI API.
 - Switch between several AI engines and view corresponding descriptions of said AI.
-- Choose from several differnt prompts for the AI to work through:
+- Choose from several different prompts for the AI to work through:
 
   - Conventional Chat Bot
     - chat with an openAI
