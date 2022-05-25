@@ -2,7 +2,7 @@ export const prompts = [
   {
     promptName: 'Chat',
     promptDescription:
-      'Conventional chat bot: ask it a question, have it write you a list, poem, story, whatever you can think of.',
+      'general bot: ask it a question, have it write you a list, poem, story, whatever you can think of.',
     prompt: '',
     instructions:
       'Ask it a question, have it write you a list, poem, story. whatever you can think of.',
@@ -20,6 +20,13 @@ export const prompts = [
     promptDescription: 'Recipe creater bot',
     prompt: 'Write a recipe based on these ingredients and instructions:',
     instructions:
-      'Add several different food items/ingredients. Bot will create a recipe based off of your input, with instructions.',
+      'Input several different food items/ingredients. Bot will create a recipe based off of your input, with instructions.',
+  },
+  {
+    promptName: 'Movie to Emoji',
+    promptDescription: 'Converts movie title into emojis',
+    prompt:
+      'Convert movie titles into emoji.\n\nBack to the Future: 👨👴🚗🕒 \nBatman: 🤵🦇 \nTransformers: 🚗🤖 \n',
+    instructions: 'Input a movie title, the bot will convert it to an emoji',
   },
 ];
