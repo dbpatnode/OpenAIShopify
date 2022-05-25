@@ -22,11 +22,12 @@ export const prompts = [
     instructions:
       'Add several different food items/ingredients (i.e. potatoes, cheese, ground beef). openAI will create a recipe based off of your input, with instructions.',
   },
-  {
-    promptName: 'Movie to Emoji',
-    promptDescription: 'Converts movie title into emojis',
-    prompt:
-      'Convert movie titles into emoji.\n\nBack to the Future: 👨👴🚗🕒 \nBatman: 🤵🦇 \nTransformers: 🚗🤖 \n',
-    instructions: 'Input a movie title, openAI will convert it to an emoji',
-  },
+
+  // {
+  //   promptName: 'Movie to Emoji',
+  //   promptDescription: 'Converts movie title into emojis',
+  //   prompt:
+  //     'Convert movie titles into emoji.\n\nBack to the Future: 👨👴🚗🕒 \nBatman: 🤵🦇 \nTransformers: 🚗🤖 \n',
+  //   instructions: 'Input a movie title, openAI will convert it to an emoji',
+  // },
 ];
