@@ -36,6 +36,17 @@ A React application built as part of the Shopify Fall 2022 front end challenge.
 
 - Communicate with OpenAI API.
 - Switch between several AI engines and view corresponding descriptions of said AI.
+- Choose from several differnt prompts for the AI to work through:
+
+  - Conventional Chat Bot
+    - chat with an openAI
+  - Sassy Chat Bot
+    - same as Conventional Chat Bot, but sassy
+  - Recipe Creator
+    - input different food items and get a recipe based and instructions from openAI
+  - Movie to Emoji Converter
+    - Enter a movie title and openAI will return a set of emojis depicting the movie
+
 - AI responses are persisted through the use of localstorage.
 - Delete previous responses.
 - Filter responses based upon AI engine choosen.

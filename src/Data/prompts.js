@@ -16,7 +16,7 @@ export const prompts = [
       'Ask it a question, have it write you a list, poem, story. whatever you can think of.',
   },
   {
-    promptName: 'Recepie Creator',
+    promptName: 'Recipe Creator',
     promptDescription: 'Recipe creater bot',
     prompt: 'Write a recipe based on these ingredients and instructions:',
     instructions:
